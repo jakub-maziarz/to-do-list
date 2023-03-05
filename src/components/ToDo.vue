@@ -1,14 +1,14 @@
 <template>
-<div class="container-xl">
-    <div class="row">
-        <Today></Today>
-        <FilterTasks></FilterTasks>
+    <div class="container-xl py-4 px-3">
+        <div class="d-flex justify-content-between">
+            <Today></Today>
+            <FilterTasks></FilterTasks>
+        </div>
+        <TodoList></TodoList>
+        <NewTask></NewTask>
+        <FinishTasks></FinishTasks>
+        <Footer></Footer>
     </div>
-    <TodoList></TodoList>
-    <NewTask></NewTask>
-    <FinishTasks></FinishTasks>
-    <Footer></Footer>
-</div>
 </template>
 
 <script setup>

@@ -1,5 +1,5 @@
 <template>
-    <div class="col d-flex flex-row align-items-center">
+    <div class="d-flex flex-row align-items-center">
         <div class="calendar me-4" v-if="displayedDate">
             <div class="calendar__month text-center rounded-top px-1">
                 <span class="fs-7">{{ displayedDate.month }}</span>
