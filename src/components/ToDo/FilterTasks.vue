@@ -49,6 +49,7 @@ const filterOptionsComputed = computed(() => {
 <style>
 .filter-tasks {
     position: relative;
+    z-index: 1;
 }
 
 .filter-tasks__dots {
@@ -77,8 +78,9 @@ const filterOptionsComputed = computed(() => {
     padding: 5.5px 26px;
     background-color: var(--background-color);
     position: absolute;
-    bottom: -7px;
+    bottom: 0;
     right: 0;
+    transform: translateY(4px);
 }
 
 .filter-tasks__options {
@@ -90,6 +92,7 @@ const filterOptionsComputed = computed(() => {
     right: 0;
     border-top-right-radius: 0 !important;
     color: var(--filter-tasks-inactive-color);
+    background-color: var(--background-color);
 }
 
 .filter-tasks__option {
