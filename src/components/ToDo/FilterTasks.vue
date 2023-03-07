@@ -14,9 +14,9 @@
     </div>
 </template>
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, inject } from 'vue';
 
-const emit = defineEmits(["filterTasks"]);
+const eventBus = inject('eventBus');
 
 const dropdown = ref(false);
 const filterDiv = ref(null);
@@ -33,7 +33,7 @@ onMounted(() => {
 function filterTasks(option, index) {
     activeFilterOptionIndex.value = index;
     dropdown.value = false;
-    emit("filterTasks", option);
+    eventBus.emit("filterTasks", option);
 }
 
 const filterOptionsComputed = computed(() => {

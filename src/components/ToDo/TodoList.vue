@@ -26,11 +26,19 @@ const activeHoveredMarker = ref(false);
 const activeHoveredDeleteIcon = ref(false);
 
 onMounted(() => {
-    tasks.value = JSON.parse(localStorage.getItem('tasks'));
+    filterTasks();
     eventBus.on('updateTasksList', (savedTasks) => {
         tasks.value = savedTasks;
     })
+    eventBus.on('filterTasks', (option) => {
+        filterTasks(option);
+    })
 })
+
+const filterTasks = (state = 'in progress') => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks'));
+    tasks.value = savedTasks.filter((task) => task.state === state);
+}
 
 </script>
 <style>
