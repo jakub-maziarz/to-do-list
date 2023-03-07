@@ -1,13 +1,31 @@
 <template>
     <div class="new-task d-flex align-items-center px-2 mt-4">
-        <div class="new-task__icon border border-2 me-4">
+        <div class="new-task__icon border border-2 me-4" @click="addTask()">
             <font-awesome-icon icon="fa-solid fa-plus" size="2xs" />
         </div>
         <div class="new-task__input flex-grow-1 fs-5">
-            <input type="text" name="new-task" id="new-task" placeholder="Dodaj nowe zadanie...">
+            <input type="text" name="new-task" id="new-task" placeholder="Dodaj nowe zadanie..." v-model="taskInput"
+                @keyup.enter="addTask()">
         </div>
     </div>
 </template>
+<script setup>
+import { ref, inject } from 'vue';
+
+const taskInput = ref('');
+const eventBus = inject('eventBus');
+
+const addTask = () => {
+    const savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    savedTasks.push({
+        'text': taskInput.value,
+        'state': 'in progress'
+    });
+    localStorage.setItem('tasks', JSON.stringify(savedTasks));
+    taskInput.value = '';
+    eventBus.emit('updateTasksList', savedTasks);
+};
+</script>
 <style>
 .new-task__icon {
     border-radius: 50%;
