@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+    --background-color: #FFFFFF;
+    --text-font: 'Roboto', sans-serif;
+    --calendar-primary-color: #3D82EB;
+    --calendar-secondary-color: #FFFFFF;
+    --header-text-color: #323232;
+    --filter-tasks-inactive-color: #C4C4C4;
+    --filter-tasks-active-color: #4E4E4E;
+    --filter-tasks-active-color-text: #3D82EB;
+    --filter-tasks-options-dividers-color: #ECECEC;
+    --filter-tasks-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.15);
+    --task-text-color: #4E4E4E;
+    --task-marker-primary-color: #CBCBCB;
+    --task-marker-secondary-color: #FFFFFF;
+    --task-finished-marker-primary-color: #4E4E4E;
+    --task-delete-color: #EB3D3D;
+    --task-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    --task-add-primary-color: #3D82EB;
+    --task-add-secondary-color: #FFFFFF;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--text-font);
+}
+
+.fs-7 {
+    font-size: 0.9rem;
+}
