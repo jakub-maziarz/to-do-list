@@ -1,13 +1,10 @@
 <template>
-    <div class="container-xl py-4 px-3">
-        <div class="d-flex justify-content-between">
+    <div class="container-2xl p-4 p-md-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
             <Today></Today>
             <FilterTasks></FilterTasks>
         </div>
         <TodoList></TodoList>
-        <NewTask></NewTask>
-        <FinishTasks></FinishTasks>
-        <Footer></Footer>
     </div>
 </template>
 
@@ -15,7 +12,4 @@
 import Today from './ToDo/Today.vue';
 import FilterTasks from './ToDo/FilterTasks.vue';
 import TodoList from './ToDo/TodoList.vue';
-import NewTask from './ToDo/NewTask.vue';
-import FinishTasks from './ToDo/FinishTasks.vue';
-import Footer from './ToDo/Footer.vue';
 </script>

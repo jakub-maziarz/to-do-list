@@ -8,7 +8,7 @@
                 <span class="fs-7">{{ displayedDate.day }}</span>
             </div>
         </div>
-        <h1 class="fs-1 fw-bold my-0">Dzisiaj</h1>
+        <h1 class="fs-1 fw-bold my-0 list-header">Dzisiaj</h1>
     </div>
 </template>
 
@@ -39,5 +39,9 @@ onMounted(() => {
     background-color: var(--calendar-secondary-color);
     color: var(--header-text-color);
     line-height: 1;
+}
+
+.list-header {
+    font-size: 28px !important;
 }
 </style>

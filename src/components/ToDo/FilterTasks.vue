@@ -8,7 +8,7 @@
                 v-for="({ option, active }) in filterOptionsComputed" :key="option"
                 @click="$event => filterTasks(option, filterOptions.indexOf(option))" :class="{ 'active': active }">
                 {{
-                    option.charAt(0).toUpperCase() + option.slice(1) }}
+                    filterOptionsPL[option].charAt(0).toUpperCase() + filterOptionsPL[option].slice(1) }}
             </div>
         </div>
     </div>
@@ -22,12 +22,21 @@ const dropdown = ref(false);
 const filterDiv = ref(null);
 const activeFilterOptionIndex = ref(null);
 const filterOptions = ['completed', 'in progress', 'removed'];
+const filterOptionsPL = {
+    'completed': 'zakończone',
+    'in progress': 'w trakcie',
+    'removed': 'usunięte'
+};
 
 onMounted(() => {
     document.addEventListener('click', (event) => {
         const isClickedOutside = !filterDiv.value.contains(event.target);
         if (isClickedOutside && dropdown.value === true) dropdown.value = false;
     })
+
+    // eventBus.on('changedState', () => {
+    //     activeFilterOptionIndex.value = 1;
+    // })
 })
 
 function filterTasks(option, index) {
@@ -75,12 +84,12 @@ const filterOptionsComputed = computed(() => {
 
 .filter-tasks__dots.active::after {
     content: '';
-    padding: 5.5px 26px;
+    padding: 2.5px 26px;
     background-color: var(--background-color);
     position: absolute;
     bottom: 0;
     right: 0;
-    transform: translateY(4px);
+    transform: translateY(2px);
 }
 
 .filter-tasks__options {
