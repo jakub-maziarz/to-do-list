@@ -20,8 +20,6 @@ const currentFilterOption = ref('in progress');
 onMounted(() => {
     filterTasks();
     eventBus.on('updateTasksList', (option) => {
-        // tasks.value = savedTasks;
-        // console.log(option);
         filterTasks(option);
     })
     eventBus.on('filterTasks', (option) => {

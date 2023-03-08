@@ -54,7 +54,6 @@ const editTask = (key, value = 'in progress') => {
     }
 
     localStorage.setItem('tasks', JSON.stringify(savedTasks));
-    // if (key === 'state') eventBus.emit('changedState');
     eventBus.emit('updateTasksList', props.task.state);
 };
 

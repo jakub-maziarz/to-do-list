@@ -33,10 +33,6 @@ onMounted(() => {
         const isClickedOutside = !filterDiv.value.contains(event.target);
         if (isClickedOutside && dropdown.value === true) dropdown.value = false;
     })
-
-    // eventBus.on('changedState', () => {
-    //     activeFilterOptionIndex.value = 1;
-    // })
 })
 
 function filterTasks(option, index) {
